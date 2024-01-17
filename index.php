@@ -1,4 +1,8 @@
-<?php ?>
+<?php 
+require_once __DIR__ . '/utilities/functions.php'
+
+
+?>
 
 
 
@@ -65,13 +69,13 @@
                 <div class="row">
                     <div class="col-12">
                         <h3>la tua password sicurissima è:</h3>
-                         <?php if (isset($_GET['letter']) || isset($_GET['number']) || isset($_GET['simbol'])) { 
-                           echo rand_string($_GET['password'], isset($_GET['repeat']),isset($_GET['letter']), isset($_GET['number']), isset($_GET['simbol'])); 
-                        } else {?>
-                              
-                              seleziona i valori nella checkbox
+                        <?php if (isset($_GET['letter']) || isset($_GET['number']) || isset($_GET['simbol'])) {
+                            echo rand_string($_GET['password'], isset($_GET['repeat']), isset($_GET['letter']), isset($_GET['number']), isset($_GET['simbol']));
+                        } else { ?>
 
-                         <?php }?>
+                            seleziona i valori nella checkbox
+
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -98,7 +102,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="no" id="no" >
+                        <input class="form-check-input" type="radio" name="no" id="no">
                         <label class="form-check-label" for="no">
                             no
                         </label>
@@ -111,13 +115,13 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="number" id="number" >
+                            <input class="form-check-input" type="checkbox" name="number" id="number">
                             <label class="form-check-label" for="number">
                                 Numeri
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="simbol" id="simbol" >
+                            <input class="form-check-input" type="checkbox" name="simbol" id="simbol">
                             <label class="form-check-label" for="simbol">
                                 Simboli
                             </label>
@@ -141,60 +145,6 @@
 
 
 <?php
-
-function rand_string($length, $repeat,$letter , $number , $simbol ){
-$characters = '';
- 
-
-      
-    if($letter){
-        $characters.='abcdefghijklmnopqrstuvwxyz';
-    }
-    
-    if($number){
-        $characters.='0123456789';
-    }
-    
-    if($simbol){
-        $characters.='!@#$%^&*()-_+=<>?';
-    }
-
-    $password = '';
-    $charactersLength = strlen($characters);
-
-
-    for ($i = 0; $i < $length; $i++) {
-        $password .= $characters[rand(0, $charactersLength - 1)];
-    }
-
-    if (!$repeat) {
-        $password = implode('', array_unique(str_split($password)));
-    }
-    return $password;
-
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        // Controlla se il parametro "password" è presente nella query string
-        if (isset($_GET['password'])) {
-            // Ottieni la lunghezza della password dalla query string
-            $passwordLength =$_GET['password'];
-    
-            // Altre opzioni del form
-            $allowRepeat = isset($_GET['repeat']);
-            $allowLetters = isset($_GET['letter']);
-            $allowNumbers = isset($_GET['number']);
-            $allowSymbols = isset($_GET['simbol']);
-    
-            // Genera la password casuale
-            $generatedPassword = rand_string($passwordLength, $allowRepeat, $allowLetters, $allowNumbers, $allowSymbols);
-    
-           
-        }
-    }
-
-
-}
-
-
 
 
 
