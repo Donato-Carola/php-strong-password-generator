@@ -36,7 +36,7 @@
                         <div class="alert alert-danger container" role="alert">
                             inserisci parametro
                         </div>
-                    <?php } elseif (empty($_GET['password']) || !is_string($_GET['password']) ) { ?>
+                    <?php } elseif (empty($_GET['password']) || !is_string($_GET['password'])) { ?>
                         <div class="alert alert-danger container" role="alert">
                             parametro non valido
                         </div>
@@ -44,7 +44,7 @@
 
                         <div class="alert alert-success container" role="alert">
                             Parametro valido inserito
-                          
+
 
                         </div>
 
@@ -59,17 +59,17 @@
         <?php } ?>
 
 
-    <section class="bg-light container">
+        <section class="bg-light container">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-        <h3>la tua password sicurissima è:</h3> 
-        <?php  echo rand_string($_GET['password']);?>
-    </div>
-    </div> 
-    </div> 
-    </section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>la tua password sicurissima è:</h3>
+                        <?php echo rand_string($_GET['password']); ?>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -85,16 +85,16 @@
             <div class="mb-3 d-flex justify-content-between">
                 <label for="exampleInputPassword1" class="form-label">Consenti ripetizione di uno o più caratteri:</label>
                 <div class="d-flex flex-column my_check">
-                    <div class="form-check ">
-                        <input class="form-check-input" type="radio" name="repeat1" id="repeat11">
-                        <label class="form-check-label " for="repeat1">
-                            Si
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="repeat2" id="repeat2" checked>
-                        <label class="form-check-label" for="repeat2">
-                            No
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            no
                         </label>
                     </div>
                     <div class="pt-4">
@@ -136,11 +136,11 @@
 
 <?php
 
-function rand_string( $password) {
+function rand_string($password)
+{
 
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!?%&";
-    return substr(str_shuffle($chars),0,$password);
-
+    return substr(str_shuffle($chars), 0, $password);
 }
 
 
