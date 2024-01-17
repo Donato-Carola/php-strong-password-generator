@@ -86,14 +86,14 @@
                 <label for="exampleInputPassword1" class="form-label">Consenti ripetizione di uno o più caratteri:</label>
                 <div class="d-flex flex-column my_check">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="yes" id="yes">
+                        <label class="form-check-label" for="yes">
                             si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="no" id="no" checked>
+                        <label class="form-check-label" for="no">
                             no
                         </label>
                     </div>
