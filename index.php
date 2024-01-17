@@ -44,7 +44,7 @@
 
                         <div class="alert alert-success container" role="alert">
                             Parametro valido inserito
-                          <div> <h3>la tua password sicurissima è:</h3> <?php  echo rand_string($_GET['password']);?></div> 
+                          
 
                         </div>
 
@@ -54,7 +54,27 @@
 
 
             </section>
+
+
         <?php } ?>
+
+
+    <section class="bg-light container">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+        <h3>la tua password sicurissima è:</h3> 
+        <?php  echo rand_string($_GET['password']);?>
+    </div>
+    </div> 
+    </div> 
+    </section>
+
+
+
+
+
 
         <form class="container pt-4 pb-4 ">
             <div class="mb-3 d-flex justify-content-between">
@@ -66,33 +86,33 @@
                 <label for="exampleInputPassword1" class="form-label">Consenti ripetizione di uno o più caratteri:</label>
                 <div class="d-flex flex-column my_check">
                     <div class="form-check ">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label " for="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="repeat1" id="repeat11">
+                        <label class="form-check-label " for="repeat1">
                             Si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="repeat2" id="repeat2" checked>
+                        <label class="form-check-label" for="repeat2">
                             No
                         </label>
                     </div>
                     <div class="pt-4">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" name="letter" id="letter">
+                            <label class="form-check-label" for="letter">
                                 Lettere
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" name="number" id="number" checked>
+                            <label class="form-check-label" for="number">
                                 Numeri
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" name="simbol" id="simbol" checked>
+                            <label class="form-check-label" for="simbol">
                                 Simboli
                             </label>
                         </div>
