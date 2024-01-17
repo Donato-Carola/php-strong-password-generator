@@ -25,7 +25,7 @@ function rand_string($length, $repeat, $letter, $number, $simbol)
         $password .= $characters[rand(0, $charactersLength - 1)];
     }
 
-    if (!$repeat) {
+    if ($repeat) {
         $password = implode('', array_unique(str_split($password)));
     }
     return $password;
