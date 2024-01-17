@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h3>la tua password sicurissima è:</h3>
-                        <?php echo rand_string($_GET['password']); ?>
+                        <?php echo rand_string($_GET['password'],$_GET['letter'],$_GET['number'],$_GET['simbol']); ?>
                     </div>
                 </div>
             </div>
@@ -136,14 +136,35 @@
 
 <?php
 
-function rand_string($password)
-{
+function rand_string($length,$letter,$number,$simbol){
+$characters = '';
 
-    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!?%&";
-    return substr(str_shuffle($chars), 0, $password);
+      
+    if($letter){
+        $characters.='abcdefghijklmnopqrstuvwxyz';
+    }
+    
+    if($number){
+        $characters.='0123456789';
+    }
+    
+    if($simbol){
+        $characters.='!@#$%^&*()-_+=<>?';
+    }
+
+    $password = '';
+    $charactersLength = strlen($characters);
+
+
+    for ($i = 0; $i < $length; $i++) {
+        $password .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $password;
+
+   
+
+
 }
-
-
 
 
 
