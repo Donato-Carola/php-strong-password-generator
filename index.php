@@ -28,16 +28,36 @@
 
 
     <main>
-        <section>
+        <?php if (!isset($_GET['password'])) { ?>
+            <section class="container" id="userinfo">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="alert alert-danger container" role="alert">
+                            inserisci parametro
+                        </div>
+                    <?php } elseif (empty($_GET['password']) || !is_string($_GET['password']) ) { ?>
+                        <div class="alert alert-danger container" role="alert">
+                            parametro non valido
+                        </div>
+                    <?php } else { ?>
+
+                        <div class="alert alert-success container" role="alert">
+                            Parametro valido inserito
+                        </div>
 
 
-        </section>
+                    </div>
+                </div>
 
+
+            </section>
+        <?php } ?>
 
         <form class="container pt-4 pb-4 ">
             <div class="mb-3 d-flex justify-content-between">
                 <label for="password" class="form-label">Lunghezza password:</label>
-                <input type="text" class="my_input" name="password" id="password" aria-describedby="emailHelp">
+                <input type="number" class="my_input" name="password" id="password" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3 d-flex justify-content-between">
@@ -56,25 +76,25 @@
                         </label>
                     </div>
                     <div class="pt-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                           Lettere
-                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Lettere
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Numeri
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Simboli
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Numeri
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Simboli
-                        </label>
-                    </div>
-                </div>
                 </div>
             </div>
 
@@ -89,3 +109,14 @@
 </body>
 
 </html>
+
+
+
+<?php
+
+
+
+
+
+
+?>
