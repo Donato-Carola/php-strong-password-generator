@@ -44,6 +44,8 @@
 
                         <div class="alert alert-success container" role="alert">
                             Parametro valido inserito
+                          <div> <h3>la tua password sicurissima è:</h3> <?php  echo rand_string($_GET['password']);?></div> 
+
                         </div>
 
 
@@ -56,7 +58,7 @@
 
         <form class="container pt-4 pb-4 ">
             <div class="mb-3 d-flex justify-content-between">
-                <label for="password" class="form-label">Lunghezza password:</label>
+                <label for="password" class="form-label"> Inserisci Lunghezza password:</label>
                 <input type="number" class="my_input" name="password" id="password" aria-describedby="emailHelp">
 
             </div>
@@ -113,6 +115,14 @@
 
 
 <?php
+
+function rand_string( $password) {
+
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!?%&";
+    return substr(str_shuffle($chars),0,$password);
+
+}
+
 
 
 
